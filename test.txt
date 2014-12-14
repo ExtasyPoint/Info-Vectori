@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class InterclasareVectori {
+
+	public static void main(String[] args) {
+		int a[]=new int[100];
+		int b[]=new int[100];
+		int c[]=new int[100];
+		Scanner scan = new Scanner(System.in);
+		System.out.print("Nr elemente vector a: ");
+		int z = scan.nextInt();
+		System.out.print("Vector a: ");
+		for(int q=1;q<=z;q++)
+			a[q]=scan.nextInt();
+		System.out.print("Nr elemente vector b: ");
+		int x = scan.nextInt();
+		System.out.print("Vector b: ");
+		for(int w=1;w<=x;w++)
+			b[w]=scan.nextInt();
+		int i=1;
+		int j=1;
+		int k=0;
+		while(i<=z && j<=x)
+		{if(a[i]<b[j]){k++;
+						c[k]=a[i];
+						i++;}
+		else{k++;
+			c[k]=b[j];
+			j++;}
+		}
+		if(i>z)while(j<=x){k++;
+							c[k]=b[j];
+							j++;}
+		if(j>x)while(i<=z){k++;
+							c[k]=a[i];
+							i++;}
+		for(int p=1;p<=k;p++)
+			System.out.print(c[p]+"\t");
+		scan.close();
+		}
+
+	}
